@@ -15,11 +15,11 @@ module.exports = function(grunt) {
     },
     replace: {
       images: {
-        src: ['build/text/*.txt'],
-        dest: 'assets/text/',
+        src: ['assets/css/global.css'],
+        overwrite: true,
         replacements: [{
-          from: 'Red',
-          to: 'Blue'
+          from: 'puppy', //this is where you replace local images with t4 urls
+          to: 'dog'
         }]
       }
     }
@@ -30,6 +30,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
  
 // Default task.
-grunt.registerTask('default', ['replace', 'sass']);
+grunt.registerTask('default', ['sass', 'replace']);
 
 };
