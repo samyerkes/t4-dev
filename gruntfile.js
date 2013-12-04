@@ -6,35 +6,30 @@ module.exports = function(grunt) {
     sass: {
       build: {
         files: {
-          "assets/css/global.css": "assets/sass/global.sass"
+          "assets/css/global.css": "build/sass/global.sass"
         },
         options: {
             style: 'compressed'
         }
       }
     },
-    watch: {
-        files: ['assets/css/global.css'],
-        options: {
-            livereload: true
-        }
-    },
     replace: {
       images: {
-        src: ['assets/imgs/*.jpg'],
-        dest: 'build/imgs/',
+        src: ['build/text/*.txt'],
+        dest: 'assets/text/',
         replacements: [{
-          from: 'puppy',
-          to: 'dog'
+          from: 'Red',
+          to: 'Blue'
         }]
       }
     }
   });
+
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
  
 // Default task.
-grunt.registerTask('default', ['replace', 'sass', 'watch']);
+grunt.registerTask('default', ['replace', 'sass']);
 
 };
