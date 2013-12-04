@@ -9,7 +9,7 @@ module.exports = function(grunt) {
           "assets/css/global.css": "build/sass/global.sass"
         },
         options: {
-            style: 'compressed'
+            style: 'compressed',
         }
       }
     },
@@ -28,6 +28,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-compass');
  
 // Default task.
 grunt.registerTask('default', ['sass', 'replace']);
