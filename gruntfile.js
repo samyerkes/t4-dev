@@ -18,13 +18,23 @@ module.exports = function(grunt) {
         options: {
             livereload: true
         }
+    },
+    replace: {
+      images: {
+        src: ['assets/imgs/*.jpg'],
+        dest: 'build/imgs/',
+        replacements: [{
+          from: 'puppy',
+          to: 'dog'
+        }]
+      }
     }
   });
- 
+  grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
  
 // Default task.
-grunt.registerTask('default', ['sass', 'watch']);
+grunt.registerTask('default', ['replace', 'sass', 'watch']);
 
 };
