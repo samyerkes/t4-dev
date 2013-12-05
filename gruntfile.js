@@ -1,15 +1,13 @@
 module.exports = function(grunt) {
- 
-  grunt.registerTask('watch', [ 'watch' ]);
- 
+  // configure tasks
   grunt.initConfig({
-    sass: {
-      build: {
-        files: {
-          "assets/css/global.css": "build/sass/global.sass"
-        },
+    pkg: grunt.file.readJSON('package.json'),
+    compass: {
+      dist: {
         options: {
-            style: 'compressed',
+          sassDir: 'build/sass',
+          cssDir: 'assets/css',
+          config: 'config.rb'
         }
       }
     },
@@ -22,15 +20,25 @@ module.exports = function(grunt) {
           to: 'dog'
         }]
       }
+    },
+    
+    watch: {
+      options: {
+        livereload: true
+      },
+      css: {
+        files: ['build/sass/*.sass'],
+        tasks: ['compass:dist', 'replace']
+      }
     }
   });
-
+  // load plugins
   grunt.loadNpmTasks('grunt-text-replace');
-  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
- 
-// Default task.
-grunt.registerTask('default', ['sass', 'replace']);
+
+  // Default task.
+grunt.registerTask('default', ['watch', 'replace']);
+
 
 };

@@ -1,4 +1,6 @@
-grbody
+@import "compass/css3"
+
+body
 	background: #fefefe
 	color: #444444
 .wrap
@@ -7,8 +9,10 @@ grbody
 	max-width: 750px
 	padding: 25px
 	background: url('../imgs/puppy.jpg')
+	+background-size(cover)
 h1
-	background: green
+	background: blue
 	color: orange
+	+border-radius(10px)
 img
 	width: 100%
