@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['build/js/*.js'],
-        tasks: ['uglify']
+        tasks: ['uglify', 'copy:js']
       },
       css: {
         files: ['build/sass/*.sass'],
@@ -34,8 +34,18 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'assets/js/global.js' : ['build/js/*.js', '!build/js/jquery.js', '!build/js/ modernizr.js']
+          'assets/js/global.js' : ['build/js/*.js', '!build/js/jquery.js', '!build/js/modernizr.js']
         }
+      }
+    },
+    copy: {
+      js: {
+        expand: true,
+        cwd: 'build/js/',
+        src: ['jquery.js', 'modernizr.js'],
+        dest: 'assets/js/',
+        flatten: true,
+        filter: 'isFile',
       }
     },
     replace: {
@@ -68,6 +78,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-html-validation');
