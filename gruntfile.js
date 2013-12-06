@@ -21,10 +21,12 @@ module.exports = function(grunt) {
         }]
       }
     },
-    
     watch: {
       options: {
         livereload: true
+      },
+      html: {
+        files: '*.html'
       },
       css: {
         files: ['build/sass/*.sass'],
