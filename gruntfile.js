@@ -21,6 +21,16 @@ module.exports = function(grunt) {
         }]
       }
     },
+    uncss: {
+      dist: {
+        files: {
+          'assets/css/global.css': ['*.html']
+        },
+        options: {
+          compress: true
+        }
+      }
+    },
     watch: {
       options: {
         livereload: true
@@ -30,11 +40,12 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['build/sass/*.sass'],
-        tasks: ['compass:dist', 'replace']
+        tasks: ['compass:dist', 'replace', 'uncss']
       }
     }
   });
   // load plugins
+  grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
