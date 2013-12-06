@@ -12,6 +12,10 @@ module.exports = function(grunt) {
         files: '*.html',
         tasks: ['validation']
       },
+      js: {
+        files: ['build/js/*.js'],
+        tasks: ['uglify']
+      },
       css: {
         files: ['build/sass/*.sass'],
         tasks: ['compass:dist', 'replace', 'uncss']
@@ -24,6 +28,13 @@ module.exports = function(grunt) {
           sassDir: 'build/sass',
           cssDir: 'assets/css',
           config: 'config.rb'
+        }
+      }
+    },
+    uglify: {
+      dist: {
+        files: {
+          'assets/js/global.js' : ['build/js/*.js', '!build/js/jquery.js', '!build/js/ modernizr.js']
         }
       }
     },
@@ -56,6 +67,7 @@ module.exports = function(grunt) {
   // load plugins
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-html-validation');
