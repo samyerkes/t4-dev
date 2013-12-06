@@ -1,7 +1,23 @@
+'use strict';
+
 module.exports = function(grunt) {
   // configure tasks
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    watch: {
+      options: {
+        livereload: true
+      },
+      html: {
+        files: '*.html',
+        tasks: ['validation']
+      },
+      css: {
+        files: ['build/sass/*.sass'],
+        tasks: ['compass:dist', 'replace', 'uncss']
+      }
+    },
+
     compass: {
       dist: {
         options: {
@@ -31,27 +47,21 @@ module.exports = function(grunt) {
         }
       }
     },
-    watch: {
-      options: {
-        livereload: true
-      },
-      html: {
-        files: '*.html'
-      },
-      css: {
-        files: ['build/sass/*.sass'],
-        tasks: ['compass:dist', 'replace', 'uncss']
+    validation: {
+      files: {
+        src: ['*.html']
       }
     }
   });
   // load plugins
-  grunt.loadNpmTasks('grunt-uncss');
-  grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-uncss');
+  grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-html-validation');
 
   // Default task.
-grunt.registerTask('default', ['watch', 'replace']);
+grunt.registerTask('default', ['watch']);
 
 
 };
