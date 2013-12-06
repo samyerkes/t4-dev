@@ -1,7 +1,0 @@
-body { background: #fefefe; color: #444444; }
-
-.wrap { margin: 0 auto; width: 60%; max-width: 750px; padding: 25px; background: url("../imgs/dog.jpg"); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
-
-h1 { background: blue; color: orange; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; }
-
-img { width: 100%; }
