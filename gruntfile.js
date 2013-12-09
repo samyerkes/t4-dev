@@ -10,7 +10,7 @@ module.exports = function(grunt) {
       },
       html: {
         files: '*.html',
-        tasks: ['validation']
+        tasks: ['imagemin', 'validation',]
       },
       js: {
         files: ['build/js/*.js'],
@@ -58,6 +58,19 @@ module.exports = function(grunt) {
         }]
       }
     },
+    imagemin: {
+      dynamic: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: [{
+          expand: true,
+          cwd: 'build/imgs/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'assets/imgs/'
+        }]
+      }
+    },
     uncss: {
       dist: {
         files: {
@@ -78,6 +91,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-text-replace');
