@@ -8,17 +8,37 @@
 	
 	<script src="assets/js/modernizr.js"></script>
 </head>
-<body>
+<body class="js">
+	<div id="vcuIdentityWrapper">
+	    <header id="vcuIdentity">
+	      <h1><a title="Virginia Commonwealth University" target="_blank" href="http://www.vcu.edu">Virginia Commonwealth University</a></h1>
+	    </header>
+  	</div>
 	<div class="wrap">
-		<h1>Grunt test</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, totam aut praesentium explicabo incidunt odio magnam perferendis omnis! Qui, nisi fugiat quibusdam blanditiis modi vitae quaerat necessitatibus reiciendis excepturi autem?</p>
+		<h1>T4 Dev Setup with Grunt.js</h1>
+		<p>This is a sample project I've set up for helping VCU web developers get started with effectively developing for <a href="http://www.terminalfour.com/">TerminalFour</a>, VCU's official content management system. I say <strong>effectively</strong> because the gruntfile.js that I've set up will do a number of things to make building T4 page templates easier and efficient.</p>
 		<ul>
-			<li>item 1</li>
-			<li>item 2</li>
+			<li>Validates all HTML according to the W3C engine</li>
+			<li>Minifies all CSS</li>
+			<li>Strips out any unused CSS*</li>
+			<li>Concatenates and minifies all Javascript</li>
+			<li>Replaces all local image paths in any CSS with T4 media library tags</li>
+			<li>Automatically reloads the browser on any changes in HTML, SASS, or JS</li>
+			<li>Preprocesses all CSS with SASS + <a href="http://compass-style.org/">Compass</a></li>
+			<li>Autoprefixes any CSS3 properities for fallback support with Compass</li>
+			<li>Loads in Modernizr.js (a stripped version) for HTML5 support</li>
 		</ul>
-		<p>Omnis, ducimus, unde, a eum aliquid culpa tempore voluptas explicabo cupiditate suscipit illo quaerat non modi soluta labore? Doloremque, veritatis, suscipit error sint aperiam voluptates neque! Ipsum cum minus delectus.</p>
-		<h3>Heading 3</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, nisi, tenetur, corporis, nulla quisquam doloremque nesciunt reiciendis saepe inventore quos earum animi sed facere ut neque libero illo. Magnam, odio repellendus at possimus omnis eaque dolorem in vitae eos recusandae.</p>
+		<p>Before you get started digging into the <a href="gruntfile.js">gruntfile.js</a> make sure you are familiar with using <a href="http://gruntjs.com/">Grunt.js</a> and <a href="http://sass-lang.com/">SASS</a>. If you would like contribute to the project feel free to make a pull request through <a href="https://github.com/samyerkes/t4-dev">Github</a>.</p>
+		<p class="small">*Build out a components guide where all components are used so the UNCSS in the gruntfile.js does not strip it out</small>
+		<p>For questions feel free to contact <a href="mailto:syerkes@vcu.edu">syerkes@vcu.edu</a>.
+		<h2>Go RAMS!</h2>
+	</div>
+
+	<div id='realLogo'>
+		<hgroup>
+			<h1><a href='http://www.makeitreal.vcu.edu' target='_blank' title='VCU Make it real.'>Make it real.</a></h1>
+			<h2><a href='http://www.vcu.edu' target='_blank' title='Virginia Commonwealth University'>Virginia Commonwealth University</a></h2>
+		</hgroup>
 	</div>
 
 	<script src="http://code.jquery.com/jquery-latest.min.js"type="text/javascript"></script>
