@@ -25,6 +25,7 @@
     "imagemin": "~0.1.3",
     "grunt-contrib-imagemin": "~0.4.0",
     "css-parse": "~1.5.3",
-    "grunt-combine-media-queries": "~1.0.9"
+    "grunt-combine-media-queries": "~1.0.9",
+    "grunt-csscomb": "~1.1.0"
   }
 }

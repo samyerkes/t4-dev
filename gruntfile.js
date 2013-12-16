@@ -106,7 +106,7 @@ module.exports = function(grunt) {
           'assets/css/' : ['assets/css/*.css']
         }
       }
-    }
+    },
   });
   // load plugins
   grunt.loadNpmTasks('grunt-contrib-watch');
