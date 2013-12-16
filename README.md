@@ -10,6 +10,7 @@ This is a sample project I've set up for helping VCU web developers get started 
 *	Preprocesses all CSS with SASS + [Compass](http://compass-style.org/)
 *	Autoprefixes any CSS3 properities for fallback support with Compass
 *	Loads in Modernizr.js (a stripped version) for HTML5 support
+*	Combines all media queries and adds them to the bottom of CSS
 
 Before you get started digging into the [gruntfile.js](/gruntfile.js) make sure you are familiar with using [Grunt.js](http://gruntjs.com/) and [SASS](http://sass-lang.com/). If you would like contribute to the project feel free to make a pull request through [Github](https://github.com/samyerkes/t4-dev).
 
