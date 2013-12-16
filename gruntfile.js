@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['build/sass/*.sass'],
-        tasks: ['compass:dist', 'uncss', 'copy', 'replace']
+        tasks: ['compass:dist', 'cmq', 'uncss', 'copy', 'replace']
       }
     },
 
@@ -96,6 +96,16 @@ module.exports = function(grunt) {
       files: {
         src: ['*.html']
       }
+    },
+    cmq: {
+      options: {
+        log: true
+      },
+      dist: {
+        files: {
+          'assets/css/' : ['assets/css/*.css']
+        }
+      }
     }
   });
   // load plugins
@@ -106,6 +116,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-html-validation');
+  grunt.loadNpmTasks('grunt-combine-media-queries');
 
   // Default task.
 grunt.registerTask('default', ['watch']);
