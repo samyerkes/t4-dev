@@ -25,8 +25,6 @@ module.exports = function(grunt) {
     compass: {
       dist: {
         options: {
-          sassDir: 'build/sass',
-          cssDir: 'assets/css',
           config: 'config.rb'
         }
       }
@@ -58,6 +56,12 @@ module.exports = function(grunt) {
         src: '*/**',
         dest: 't4/',
         expand: true
+      },
+      bower: {
+        cwd: 'bower_components',
+        src: '*/**',
+        dest: 'assets/lib',
+        expand: true
       }
     },
     replace: {
@@ -87,8 +91,7 @@ module.exports = function(grunt) {
           'assets/css/global.css': ['*.html']
         },
         options: {
-          compress: true,
-          ignore: ['a.pdf', 'a.pdf:after', 'a.excel', 'a.excel:after', 'a.word', 'a.word:after', '#rufio nav ul ul.dip']
+          compress: true
         }
       }
     },
@@ -107,6 +110,56 @@ module.exports = function(grunt) {
         }
       }
     },
+    bower: {
+      install:{
+      }
+    },
+    'sails-linker': {
+      modern: {
+        options: {
+          startTag: '<!--MODERNIZR-->',
+          endTag: '<!--MODERNIZR END-->',
+          fileTmpl: '<script src="%s"></script>',
+          appRoot: ''
+        },
+        files: {
+          '*.html': ['assets/lib/modernizr/modernizr.js']
+        }
+      },
+      jquery: {
+        options: {
+          startTag: '<!--JQUERY-->',
+          endTag: '<!--JQUERY END-->',
+          fileTmpl: '<script src="%s"></script>',
+          appRoot: ''
+        },
+        files: {
+          '*.html': ['assets/lib/jquery/jquery.min.js']
+        }
+      },
+      js : {
+        options: {
+          startTag: '<!--GLOBAL:JS-->',
+          endTag: '<!--GLOBAL:JS END-->',
+          fileTmpl: '<script src="%s"></script>',
+          appRoot: ''
+        },
+        files: {
+          '*.html': ['assets/js/*.js']
+        }
+      },
+      css : {
+        options: {
+          startTag: '<!--GLOBAL:CSS-->',
+          endTag: '<!--GLOBAL:CSS END-->',
+          fileTmpl: '<link rel="stylesheet" href="%s"></script>',
+          appRoot: ''
+        },
+        files: {
+          '*.html': ['assets/css/*.css']
+        }
+      }
+    }
   });
   // load plugins
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -117,9 +170,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-html-validation');
   grunt.loadNpmTasks('grunt-combine-media-queries');
+  grunt.loadNpmTasks('grunt-sails-linker');
+  grunt.loadNpmTasks('grunt-bower-task');
 
   // Default task.
 grunt.registerTask('default', ['watch']);
+grunt.registerTask('build', ['bower', 'copy', 'sails-linker']);
 
 
 };
