@@ -3,23 +3,3 @@
 	line-height: ($line * 16) + px
 	font-size: $size + rem
 	line-height: $line + rem
-
-@mixin get-sprite($map, $sprite, $repeat: no-repeat, $height: true, $width: true)
-	$sprite-map: sprite-url($map)
-	$sprite-image: sprite-file($map, $sprite) 
-	$sprite-position: sprite-position($map, $sprite)
-
-	background: $sprite-map $sprite-position $repeat
-
-	@if $height == true
-		// Gets the height of the sprite-image
-		$sprite-height: image-height($sprite-image)
-		// Returns the height
-		height: $sprite-height
-
-	// Checks to see if the user wants height returned
-	@if $width == true
-		// Gets the height of the sprite-image
-		$sprite-width: image-width($sprite-image)
-		// Returns the width
-		width: $sprite-width
