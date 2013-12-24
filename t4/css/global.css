@@ -1,1 +1,364 @@
-header,hgroup{display:block}html{background:#fff;font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}strong{font-weight:700}body{visibility:visible!important;width:100%!important;margin:0!important;padding:0!important}header,hgroup{display:block}.js #vcuIdentityWrapper{display:block;height:60px;margin:0;padding:0;background-color:#f8b801;background-image:url(<t4 type="media" id="36471" formatter="path/*"/>) repeat-x top;text-align:left}.js #vcuIdentity{width:100%;max-width:982px;height:54px;margin:0 auto;padding:0;background-color:#f8b801}.js #vcuIdentity h1{margin:0;padding:0}.js #vcuIdentity h1 a{display:block;width:804px;height:60px;margin:0 0 0 30px;padding:0;background:url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat;text-decoration:none;text-indent:-9999px;border:0}.js #vcuIdentity h1 a:hover{opacity:1}#realLogo{display:none;position:relative;width:100%;height:50px;margin-top:-50;background-color:#000;clear:both}#realLogo h1{margin:0;padding:0;background-color:#000;font-size:30px}#realLogo h1 a{display:block;width:280px;height:30px;margin:0 auto;padding:0;background:url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat;text-indent:-9999px}#realLogo h2{margin:0;padding:0;font-size:15px;background-color:#000}#realLogo h2 a{display:block;width:280px;height:15px;margin:0 auto;padding:0;background:url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat;text-indent:-9999px}*{margin:0;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{background:#ebebeb;color:#444}.wrap{margin:25px auto 0;width:60%;max-width:750px;padding:25px;background:#f8f8f8}html{font-size:16px}body{font-family:georgia,serif}h1,h2,p,ul{margin:0 0 25px}p{font-size:1rem;line-height:1.5rem}p.small{font-size:.8rem;line-height:1.2rem;padding:10px;background:#ebebeb;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;border-radius:5px}ul{padding:0 0 0 25px}.wrap a{color:#f8b801}.wrap a:hover,.wrap a:focus{color:#444}@media screen and (max-width:995px){#vcuIdentityWrapper{height:54px!important;background:#fff url(<t4 type="media" id="36471" formatter="path/*"/>) repeat-x top!important}#vcuIdentity{max-width:840px!important}#vcuIdentity h1 a{width:659px!important;background:url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat!important}}@media screen and (max-width:873px){body{background-position:0 48px!important}#vcuIdentityWrapper{height:48px;background:#fff url(<t4 type="media" id="36477" formatter="path/*"/>) repeat-x top}#vcuIdentity{max-width:670px!important;margin:0 auto}#vcuIdentity h1 a{width:519px!important;border:0!important;background:url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat!important;text-decoration:none!important}}@media screen and (max-width:860px){.wrap{width:92%}}@media screen and (max-width:768px){#vcuIdentity{max-width:670px!important;margin:0 auto}}@media screen and (max-width:767px){.wrap{min-height:100%;padding-bottom:50px}body{background-position:0 35px!important}#vcuIdentityWrapper{background:#fff url(<t4 type="media" id="36471" formatter="path/*"/>) repeat-x top!important}#vcuIdentityWrapper,#vcuIdentity,#vcuIdentity h1 a{height:35px!important}#vcuIdentity h1 a{width:99px!important;margin:0 auto!important;background:url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat!important;border:0!important;text-decoration:none!important}#realLogo{display:block!important}}@media screen and (max-width:640px){html{background:#f8f8f8}.wrap{width:95%;padding:0;background:0 0}}
+body {
+	visibility: visible !important;
+	width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+video {
+	display: block;
+}
+
+.no-js #vcuIdentityWrapper {
+	display: none;
+}
+
+.js #vcuIdentityWrapper {
+	display: block;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	background-color: #f8b801;
+	background-image: url(<t4 type="media" id="36471" formatter="path/*"/>) repeat-x top;
+	text-align: left;
+}
+
+.js #vcuIdentity {
+	width: 100%;
+	max-width: 982px;
+	height: 54px;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #f8b801;
+}
+
+.js #vcuIdentity header {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0;
+	height: 60px;
+}
+
+.js #vcuIdentity h1 {
+	margin: 0;
+	padding: 0;
+}
+
+.js #vcuIdentity h1 a {
+	display: block;
+	width: 804px;
+	height: 60px;
+	margin: 0 0 0 30px;
+	padding: 0;
+	background: url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat;
+	text-decoration: none;
+	text-indent: -9999px;
+	border: 0;
+}
+
+.js #vcuIdentity h1 a:hover {
+	opacity: 1;
+}
+
+.js #vcuIdentity h2 {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+.js #vcuIdentity h2 a {
+	display: block;
+	width: 109px;
+	height: 31px;
+	background: url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat;
+	margin: -37px 40px 0 0;
+	padding: 0;
+	border: 0;
+	text-decoration: none;
+	text-indent: -9999px;
+}
+
+.js #vcuIdentity h2 a:hover {
+	opacity: 1;
+}
+
+#realLogo {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin-top: -50;
+	background-color: #000;
+	clear: both;
+}
+
+#realLogo h1 {
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+	font-size: 30px;
+}
+
+#realLogo h1 a {
+	display: block;
+	width: 280px;
+	height: 30px;
+	margin: 0 auto;
+	padding: 0;
+	background: url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat;
+	text-indent: -9999px;
+}
+
+#realLogo h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	background-color: #000;
+}
+
+#realLogo h2 a {
+	display: block;
+	width: 280px;
+	height: 15px;
+	margin: 0 auto;
+	padding: 0;
+	background: url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat;
+	text-indent: -9999px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	background: #ebebeb;
+	color: #444;
+}
+
+.wrap {
+	margin: 25px auto 0;
+	width: 60%;
+	max-width: 750px;
+	padding: 25px;
+	background: #f8f8f8;
+}
+
+img {
+	width: 100%;
+}
+
+#notneeded {
+	width: 100%;
+	height: 100%;
+	background: pink;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: georgia,serif;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+	margin: 0 0 25px;
+}
+
+p {
+	font-size: 16px;
+	line-height: 24px;
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+
+p.small {
+	font-size: 12.8px;
+	line-height: 19.2px;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
+	padding: 10px;
+	background: #ebebeb;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
+
+ul {
+	padding: 0 0 0 25px;
+}
+
+.wrap a {
+	color: #f8b801;
+}
+
+.wrap a:hover,
+.wrap a:focus {
+	color: #444;
+}
+
+@media screen and (max-width: 995px) {
+
+#vcuIdentityWrapper {
+	height: 54px !important;
+	background: #fff url(<t4 type="media" id="36471" formatter="path/*"/>) repeat-x top !important;
+}
+
+#vcuIdentity {
+	max-width: 840px !important;
+}
+
+#vcuIdentity h1 a {
+	width: 659px !important;
+	background: url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat !important;
+}
+
+#vcuIdentity h2 a {
+	margin-top: -41px !important;
+}
+
+}
+
+@media screen and (max-width: 873px) {
+
+body {
+	background-position: 0 48px !important;
+}
+
+#vcuIdentityWrapper {
+	height: 48px;
+	background: #fff url(<t4 type="media" id="36477" formatter="path/*"/>) repeat-x top;
+}
+
+#vcuIdentity {
+	max-width: 670px !important;
+	margin: 0 auto;
+}
+
+#vcuIdentity header {
+	height: 48px !important;
+}
+
+#vcuIdentity h1 a {
+	width: 519px !important;
+	border: 0 !important;
+	background: url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat !important;
+	text-decoration: none !important;
+}
+
+#vcuIdentity h2 a {
+	width: 84px !important;
+	height: 39px !important;
+	margin-top: -46px !important;
+	background: url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat !important;
+	border: 0 !important;
+	text-decoration: none !important;
+}
+
+}
+
+@media screen and (max-width: 860px) {
+
+.wrap {
+	width: 92%;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+
+#vcuIdentity {
+	max-width: 670px !important;
+	margin: 0 auto;
+}
+
+}
+
+@media screen and (max-width: 767px) {
+
+#wrapper,
+#wrap,
+#content,
+#container,
+.wrapper,
+.wrap,
+.content,
+.container {
+	min-height: 100%;
+	padding-bottom: 50px;
+}
+
+body {
+	background-position: 0 35px !important;
+}
+
+#vcuIdentityWrapper {
+	height: 35px !important;
+	background: #fff url(<t4 type="media" id="36471" formatter="path/*"/>) repeat-x top !important;
+}
+
+#vcuIdentity {
+	height: 35px !important;
+}
+
+#vcuIdentity header {
+	height: 35px !important;
+}
+
+#vcuIdentity h1 a {
+	width: 99px !important;
+	height: 35px !important;
+	margin: 0 auto !important;
+	background: url(<t4 type="media" id="36471" formatter="path/*"/>) no-repeat !important;
+	border: 0 !important;
+	text-decoration: none !important;
+}
+
+#vcuIdentity h2 a {
+	display: none !important;
+	border: 0 !important;
+	text-decoration: none !important;
+}
+
+#realLogo {
+	display: block !important;
+}
+
+}
+
+@media screen and (max-width: 640px) {
+
+html {
+	background: #f8f8f8;
+}
+
+.wrap {
+	width: 95%;
+	padding: 0;
+	background: none;
+}
+
+}
+

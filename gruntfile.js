@@ -18,15 +18,13 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['build/sass/*.sass'],
-        tasks: ['compass:dist', 'cmq', 'uncss', 'copy', 'replace']
+        tasks: ['compass:dist', 'cmq', 'copy', 'replace']
       }
     },
 
     compass: {
       dist: {
         options: {
-          sassDir: 'build/sass',
-          cssDir: 'assets/css',
           config: 'config.rb'
         }
       }
@@ -49,7 +47,7 @@ module.exports = function(grunt) {
       },
       imgs: {
         cwd: 'build/imgs/',
-        src: '*',
+        src: '**/*',
         dest: 'assets/imgs/',
         expand: true
       },
@@ -81,7 +79,7 @@ module.exports = function(grunt) {
         ]
       }
     },
-    uncss: {
+    /*uncss: {
       dist: {
         files: {
           'assets/css/global.css': ['*.html']
@@ -91,7 +89,7 @@ module.exports = function(grunt) {
           ignore: ['a.pdf', 'a.pdf:after', 'a.excel', 'a.excel:after', 'a.word', 'a.word:after', '#rufio nav ul ul.dip']
         }
       }
-    },
+    },*/
     validation: {
       files: {
         src: ['*.html']
