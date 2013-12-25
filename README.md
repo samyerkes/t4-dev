@@ -12,7 +12,7 @@ This is a sample project I've set up for helping VCU web developers get started 
 *	Loads in newest version of jQuery and Modernizr via a Bower file
 *	Combines all media queries and adds them to the bottom of CSS
 
-Before you get started digging into the [gruntfile.js](/gruntfile.js) make sure you are familiar with using [Grunt.js](http://gruntjs.com/) and [SASS](http://sass-lang.com/). If you would like contribute to the project feel free to make a pull request through [Github](https://github.com/samyerkes/t4-dev).
+Before you get started digging into the [gruntfile.js](/gruntfile.js) make sure you are familiar with using [Grunt.js](http://gruntjs.com/) and [SASS](http://sass-lang.com/). Run "npm install" to download dependencies from the package.json file. If you would like contribute to the project feel free to make a pull request through [Github](https://github.com/samyerkes/t4-dev).
 
 [^1]: Build out a components guide where all components are used so the UNCSS in the gruntfile.js does not strip it out
 
