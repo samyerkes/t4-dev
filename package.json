@@ -18,6 +18,8 @@
     "grunt-contrib-copy": "~0.4.1",
     "grunt-combine-media-queries": "~1.0.9",
     "grunt-bower-task": "~0.3.4",
-    "grunt-sails-linker": "~0.9.5"
+    "grunt-sails-linker": "~0.9.5",
+    "grunt-uncss": "~0.1.6",
+    "grunt-contrib-cssmin": "~0.7.0"
   }
 }
