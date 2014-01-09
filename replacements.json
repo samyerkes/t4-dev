@@ -1,0 +1,14 @@
+[
+          {"from":"../imgs/body-bg-600.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/body-bg-768.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/body-bg-sm.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/body-bg.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/makeitreal-600.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/makeitreal.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/makeitrealFooter.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/vcubar-footer.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/vcubrand-600.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/vcubrand-768.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/vcubrand.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"},
+          {"from":"../imgs/vcuseal.gif" , "to":"<t4 type='media' id='xxxx' formatter='path/*'/>"}
+]

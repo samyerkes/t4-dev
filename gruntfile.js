@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['build/sass/*.sass'],
-        tasks: ['compass:dist', 'cmq', 'uncss', 'copy', 'replace']
+        tasks: ['compass:dist', 'uncss', 'cmq', 'cssmin', 'copy', 'replace']
       }
     },
 
@@ -65,33 +65,16 @@ module.exports = function(grunt) {
       }
     },
     replace: {
-      images: {
+      t4: {
         src: ['t4/css/global.css'],
         overwrite: true,
-        replacements: [
-          {from: '../imgs/body-bg-600.gif', to: '<t4 type="media" id="36477" formatter="path/*"/>'},
-          {from: '../imgs/body-bg-768.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          {from: '../imgs/body-bg-sm.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          {from: '../imgs/body-bg.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          {from: '../imgs/makeitreal-600.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          {from: '../imgs/makeitreal.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          {from: '../imgs/makeitrealFooter.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          {from: '../imgs/vcubar-footer.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          {from: '../imgs/vcubrand-600.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          {from: '../imgs/vcubrand-768.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          {from: '../imgs/vcubrand.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          {from: '../imgs/vcuseal.gif', to: '<t4 type="media" id="36471" formatter="path/*"/>'},
-          //Continue adding images that are linked in the CSS here!
-        ]
+        replacements: []
       }
     },
     uncss: {
       dist: {
         files: {
           'assets/css/global.css': ['*.html']
-        },
-        options: {
-          compress: true
         }
       }
     },
@@ -101,12 +84,16 @@ module.exports = function(grunt) {
       }
     },
     cmq: {
-      options: {
-        log: true
-      },
       dist: {
         files: {
           'assets/css/' : ['assets/css/*.css']
+        }
+      }
+    },
+    cssmin: {
+      dist: {
+        files: {
+          'assets/css/global.css': ['assets/css/global.css']
         }
       }
     },
@@ -172,8 +159,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-combine-media-queries');
   grunt.loadNpmTasks('grunt-sails-linker');
   grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  // Default task.
+grunt.registerTask('replace-t4', function() {
+  var replacements = grunt.file.readJSON('replacements.json');
+  grunt.config('replace.t4.replacements', replacements);
+  grunt.task.run('replace');
+});
+
+// Default task.
 grunt.registerTask('default', ['watch']);
 grunt.registerTask('build', ['bower', 'copy', 'sails-linker']);
 
