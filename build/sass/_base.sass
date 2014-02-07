@@ -1,12 +1,16 @@
 *
-	margin: 0
-	padding: 0
+	@extend %nospace
 	+box-sizing(border-box)
 html
+	position: relative
+	width: 100%
+	min-height: 100%
 	background: $gray
 	color: $black
+body
+	margin: 0 0 ($pad+50px) //50px is to clear the "make it real" footer
 .wrap
-	margin: $pad auto 0
+	margin: $pad auto $pad*2
 	width: 60%
 	max-width: 750px
 	padding: $pad
