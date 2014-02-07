@@ -1,179 +1,174 @@
 body
-  visibility: visible !important
-  width: 100% !important
-  margin: 0 !important
-  padding: 0 !important
+	visibility: visible !important
+	width: 100% !important
+	margin: 0 !important
+	padding: 0 !important
 
 // HTML5 display-role reset for older browsers
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, video
-  display: block
+	display: block
 
 // Layout
-
-.no-js #vcuIdentityWrapper
-  display: none
-
-.js
-  #vcuIdentityWrapper
-    display: block
-    height: 60px
-    margin: 0
-    padding: 0
-    background:
-      color: $identity
-      image: url(../imgs/body-bg.gif) repeat-x top
-    text-align: left
-  #vcuIdentity
-    width: 100%
-    max-width: 982px
-    height: 54px
-    margin: 0 auto
-    padding: 0
-    background-color: $identity
-    header
-      width: 100%
-      max-width: 960px
-      margin: 0 auto
-      padding: 0
-      height: 60px
-    h1
-      margin: 0
-      padding: 0
-      a
-        display: block
-        width: 804px
-        height: 60px
-        margin: 0 0 0 30px
-        padding: 0
-        background: url(../imgs/vcubrand.gif) no-repeat
-        text:
-          decoration: none
-          indent: -9999px
-        border: 0
-        &:hover
-          opacity: 1
-    h2
-      float: right
-      margin: 0
-      padding: 0
-      a
-        display: block
-        width: 109px
-        height: 31px
-        background: url(../imgs/makeitreal.gif) no-repeat
-        margin: -37px 40px 0 0
-        padding: 0
-        border: 0
-        text:
-          decoration: none
-          indent: -9999px
-        &:hover
-          opacity: 1
+#vcuIdentityWrapper
+	display: block
+	height: 60px
+	@extend %nospace
+	background:
+		color: $identity
+		image: url(../imgs/body-bg.gif) repeat-x top
+	text-align: left
+#vcuIdentity
+	width: 100%
+	max-width: 982px
+	height: 54px
+	margin: 0 auto
+	padding: 0
+	background-color: $identity
+	header
+		width: 100%
+		max-width: 960px
+		margin: 0 auto
+		padding: 0
+		height: 60px
+	h1
+		@extend %nospace
+		a
+			display: block
+			width: 804px
+			height: 60px
+			margin: 0 0 0 30px
+			padding: 0
+			background: url(../imgs/vcubrand.gif) no-repeat
+			text:
+				decoration: none
+				indent: -9999px
+			border: 0
+			&:hover
+				opacity: 1
+	h2
+		float: right
+		@extend %nospace
+		a
+			display: block
+			width: 109px
+			height: 31px
+			background: url(../imgs/makeitreal.gif) no-repeat
+			margin: -37px 40px 0 0
+			padding: 0
+			border: 0
+			text:
+				decoration: none
+				indent: -9999px
+			&:hover
+				opacity: 1
 
 // Identity
 #realLogo
-  display: none
-  position: relative
-  width: 100%
-  height: 50px
-  margin-top: -50
-  background-color: $real_black
-  clear: both
-  // negative value of footer height
-  h1
-    margin: 0
-    padding: 0
-    background-color: $real_black
-    font-size: 30px
-    a
-      display: block
-      width: 280px
-      height: 30px
-      margin: 0 auto
-      padding: 0
-      background: url(../imgs/makeitrealFooter.gif) no-repeat
-      text-indent: -9999px
-  h2
-    margin: 0
-    padding: 0
-    font-size: 15px
-    background-color: $real_black
-    a
-      display: block
-      width: 280px
-      height: 15px
-      margin: 0 auto
-      padding: 0
-      background: url(../imgs/vcubar-footer.gif) no-repeat
-      text-indent: -9999px
+	display: none
+	position: absolute
+	left: 0
+	bottom: 0
+	width: 100%
+	height: 50px
+	margin-top: -50
+	background-color: $real_black
+	clear: both
+	// negative value of footer height
+	h1
+		margin: 0
+		padding: 0
+		background-color: $real_black
+		font-size: 30px
+		a
+			display: block
+			width: 280px
+			height: 30px
+			margin: 0 auto
+			padding: 0
+			background: url(../imgs/makeitrealFooter.gif) no-repeat
+			text-indent: -9999px
+	h2
+		margin: 0
+		padding: 0
+		font-size: 15px
+		background-color: $real_black
+		a
+			display: block
+			width: 280px
+			height: 15px
+			margin: 0 auto
+			padding: 0
+			background: url(../imgs/vcubar-footer.gif) no-repeat
+			text-indent: -9999px
 
 //	Media queries
 
 @media screen and (max-width: 995px)
-  #vcuIdentityWrapper
-    height: 54px !important
-    background: white url(../imgs/body-bg-768.gif) repeat-x top !important
-  #vcuIdentity
-    max-width: 840px !important
-    h1 a
-      width: 659px !important
-      background: url(../imgs/vcubrand-768.gif) no-repeat !important
-    h2 a
-      margin-top: -41px !important
+	#vcuIdentityWrapper
+		height: 54px !important
+		background: white url(../imgs/body-bg-768.gif) repeat-x top !important
+	#vcuIdentity
+		max-width: 840px !important
+		h1 a
+			width: 659px !important
+			background: url(../imgs/vcubrand-768.gif) no-repeat !important
+		h2 a
+			margin-top: -41px !important
 
 @media screen and (max-width: 873px)
-  body
-    background-position: 0 48px !important
-  #vcuIdentityWrapper
-    height: 48px
-    background: white url(../imgs/body-bg-600.gif) repeat-x top
-  #vcuIdentity
-    max-width: 670px !important
-    margin: 0 auto
-    header
-      height: 48px !important
-    h1 a
-      width: 519px !important
-      border: 0 !important
-      background: url(../imgs/vcubrand-600.gif) no-repeat !important
-      text-decoration: none !important
-    h2 a
-      width: 84px !important
-      height: 39px !important
-      margin-top: -46px !important
-      background: url(../imgs/makeitreal-600.gif) no-repeat !important
-      border: 0 !important
-      text-decoration: none !important
+	body
+		background-position: 0 48px !important
+	#vcuIdentityWrapper
+		height: 48px
+		background: white url(../imgs/body-bg-600.gif) repeat-x top
+	#vcuIdentity
+		max-width: 670px !important
+		margin: 0 auto
+		header
+			height: 48px !important
+		h1 a
+			width: 519px !important
+			border: 0 !important
+			background: url(../imgs/vcubrand-600.gif) no-repeat !important
+			text-decoration: none !important
+		h2 a
+			width: 84px !important
+			height: 39px !important
+			margin-top: -46px !important
+			background: url(../imgs/makeitreal-600.gif) no-repeat !important
+			border: 0 !important
+			text-decoration: none !important
 
 @media screen and (max-width: 768px)
-  #vcuIdentity
-    max-width: 670px !important
-    margin: 0 auto
+	#vcuIdentity
+		max-width: 670px !important
+		margin: 0 auto
 
 @media screen and (max-width: 767px)
-  #wrapper, #wrap, #content, #container, .wrapper, .wrap, .content, .container
-    min-height: 100%
-    padding-bottom: 50px
-  body
-    background-position: 0 35px !important
-  #vcuIdentityWrapper
-    height: 35px !important
-    background: white url(../imgs/body-bg-sm.gif) repeat-x top !important
-  #vcuIdentity
-    height: 35px !important
-    header
-      height: 35px !important
-    h1 a
-      width: 99px !important
-      height: 35px !important
-      margin: 0 auto !important
-      background: url(../imgs/vcuseal.gif) no-repeat !important
-      border: 0 !important
-      text-decoration: none !important
-    h2 a
-      display: none !important
-      border: 0 !important
-      text-decoration: none !important
-  #realLogo
-    display: block !important
+	#vcuIdentityWrapper
+		#wrapper, #wrap, #content, #container, .wrapper, .wrap, .content, .container
+			min-height: 100%
+			padding-bottom: 50px
+	body
+		background-position: 0 35px !important
+	#vcuIdentityWrapper
+		height: 35px !important
+		background: white url(../imgs/body-bg-sm.gif) repeat-x top !important
+	#vcuIdentity
+		height: 35px !important
+		header
+			height: 35px !important
+		h1 a
+			width: 99px !important
+			height: 35px !important
+			margin: 0 auto !important
+			background: url(../imgs/vcuseal.gif) no-repeat !important
+			border: 0 !important
+			text-decoration: none !important
+		h2 a
+			display: none !important
+			border: 0 !important
+			text-decoration: none !important
+	#realLogo
+		display: block !important
