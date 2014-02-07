@@ -5,3 +5,5 @@ validation-status.json
 npm-debug.log
 t4
 assets
+bower_components
+lib

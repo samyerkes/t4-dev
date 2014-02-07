@@ -139,7 +139,7 @@ module.exports = function(grunt) {
         options: {
           startTag: '<!--GLOBAL:CSS-->',
           endTag: '<!--GLOBAL:CSS END-->',
-          fileTmpl: '<link rel="stylesheet" href="%s"></script>',
+          fileTmpl: '<link rel="stylesheet" href="%s" />',
           appRoot: ''
         },
         files: {
@@ -166,9 +166,12 @@ grunt.registerTask('replace-t4', function() {
   grunt.task.run('replace');
 });
 
+//Build the initial directories
+grunt.registerTask('build', ['bower', 'compass:dist', 'cmq', 'uglify', 'copy', 'cssmin', 'replace-t4', 'sails-linker']);
+
 // Default task.
 grunt.registerTask('default', ['watch']);
-grunt.registerTask('build', ['bower', 'copy', 'sails-linker']);
+
 
 
 };

@@ -2,18 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>grunt-test</title>
+	<title>T4 Dev Setup with Grunt.js - Virginia Commonwealth University</title>
 	
-	<!--GLOBAL:CSS-->
-<link rel="stylesheet" href="assets/css/global.css"></script>
+<!--GLOBAL:CSS-->
 <!--GLOBAL:CSS END-->
 
-	<!--MODERNIZR-->
-<script src="assets/lib/modernizr/modernizr.js"></script>
+<!--MODERNIZR-->
 <!--MODERNIZR END-->
-	
 </head>
-<body class="js">
+<body>
 	<div id="vcuIdentityWrapper">
 	    <header id="vcuIdentity">
 	      <h1><a title="Virginia Commonwealth University" target="_blank" href="http://www.vcu.edu">Virginia Commonwealth University</a></h1>
@@ -25,7 +22,6 @@
 		<ul>
 			<li>Validates all HTML according to the W3C engine</li>
 			<li>Minifies all CSS</li>
-			<li>Strips out any unused CSS*</li>
 			<li>Concatenates and minifies all Javascript</li>
 			<li>Replaces all local image paths in any CSS with T4 media library tags</li>
 			<li>Automatically reloads the browser on any changes in HTML, SASS, or JS</li>
@@ -34,8 +30,14 @@
 			<li>Loads in newest version of jQuery and Modernizr via a Bower file</li>
 			<li>Combines all media queries and adds them to the bottom of CSS</li>
 		</ul>
+		<p>To get started:
+			<ul>
+				<li>npm install</li>
+				<li>grunt build</li>
+				<li>grunt (default watch task)</li>
+			</ul>
+		</p>
 		<p>Before you get started digging into the <a href="gruntfile.js">gruntfile.js</a> make sure you are familiar with using <a href="http://gruntjs.com/">Grunt.js</a> and <a href="http://sass-lang.com/">SASS</a>. Run "npm install" to download dependencies from the package.json file. If you would like contribute to the project feel free to make a pull request through <a href="https://github.com/samyerkes/t4-dev">Github</a>.</p>
-		<p class="small">*Build out a components guide where all components are used so the UNCSS in the gruntfile.js does not strip it out</small>
 		<p>For questions feel free to contact <a href="mailto:syerkes@vcu.edu">syerkes@vcu.edu</a>.
 		<h2>Go RAMS!</h2>
 	</div>
@@ -53,9 +55,8 @@
 <script src="assets/lib/jquery/jquery.min.js"></script>
 <!--JQUERY END-->'
 	</script>
-	
+
 	<!--GLOBAL:JS-->
-<script src="assets/js/global.js"></script>
 <!--GLOBAL:JS END-->
 
 	<script src="http://localhost:35729/livereload.js"></script>
