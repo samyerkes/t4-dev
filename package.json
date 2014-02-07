@@ -1,7 +1,7 @@
 {
   "name": "grunt-test",
   "version": "0.0.0",
-  "description": "ERROR: No README data found!",
+  "description": "A sample project to help VCU web developers get started with effectively for TerminalFour",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +19,6 @@
     "grunt-combine-media-queries": "~1.0.9",
     "grunt-bower-task": "~0.3.4",
     "grunt-sails-linker": "~0.9.5",
-    "grunt-uncss": "~0.1.6",
     "grunt-contrib-cssmin": "~0.7.0"
   }
 }
