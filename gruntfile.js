@@ -19,6 +19,10 @@ module.exports = function(grunt) {
       css: {
         files: ['build/sass/*.sass'],
         tasks: ['compass:dist', 'cmq', 'copy', 'cssmin', 'replace-t4']
+      },
+      images: {
+        files: ['build/imgs/*'],
+        tasks: ['imagemin', 'copy:t4']
       }
     },
 
@@ -45,12 +49,6 @@ module.exports = function(grunt) {
         flatten: true,
         filter: 'isFile',
       },
-      imgs: {
-        cwd: 'build/imgs/',
-        src: '*',
-        dest: 'assets/imgs/',
-        expand: true
-      },
       t4: {
         cwd: 'assets/',
         src: '*/**',
@@ -69,13 +67,6 @@ module.exports = function(grunt) {
         src: ['t4/css/global.css'],
         overwrite: true,
         replacements: []
-      }
-    },
-    uncss: {
-      dist: {
-        files: {
-          'assets/css/global.css': ['*.html']
-        }
       }
     },
     validation: {
@@ -146,6 +137,20 @@ module.exports = function(grunt) {
           '*.html': ['assets/css/*.css']
         }
       }
+    },
+    imagemin: {
+      dynamic: {
+        options: {
+          cache: false,
+          optimizationLevel: 3
+        },
+        files: [{
+          expand: true,
+          cwd: 'build/imgs/',
+          src: ['*.{png,jpg,gif}'],
+          dest: 'assets/imgs/'
+        }]
+      }
     }
   });
   // load plugins
@@ -168,11 +173,9 @@ grunt.registerTask('replace-t4', function() {
 });
 
 //Build the initial directories
-grunt.registerTask('build', ['bower', 'compass:dist', 'cmq', 'uglify', 'copy', 'cssmin', 'replace-t4', 'sails-linker']);
+grunt.registerTask('build', ['bower', 'compass:dist', 'cmq', 'uglify', 'imagemin', 'copy', 'cssmin', 'replace-t4', 'sails-linker']);
 
 // Default task.
 grunt.registerTask('default', ['watch']);
-
-
 
 };
