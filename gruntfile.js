@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['build/sass/*.sass'],
-        tasks: ['compass:dist', 'uncss', 'cmq', 'cssmin', 'copy', 'replace']
+        tasks: ['compass:dist', 'cmq', 'copy', 'cssmin', 'replace-t4']
       }
     },
 
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
     cssmin: {
       dist: {
         files: {
-          'assets/css/global.css': ['assets/css/global.css']
+          't4/css/global.css': ['t4/css/global.css']
         }
       }
     },
@@ -153,7 +153,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-html-validation');
   grunt.loadNpmTasks('grunt-combine-media-queries');
