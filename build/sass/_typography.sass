@@ -8,7 +8,15 @@ p
 	@include font-size(1)
 ul
 	padding: 0 0 0 $pad*2
+	@media screen and (max-width: $babybear)
+		padding: 0 0 0 $pad
 .wrap a
 	color: $identity
 	&:hover, &:focus
 		color: $black
+pre
+	margin: $pad-sm 0
+	padding: $pad-sm
+	border-left: 5px solid $identity
+	background: $black
+	color: $white
