@@ -9,20 +9,24 @@ module.exports = function(grunt) {
         livereload: true
       },
       html: {
-        files: '*.html',
-        tasks: ['validation', 'copy']
+        files: 'build/views/*.html',
+        tasks: ['includereplace', 'sails-linker', 'validation']
       },
       js: {
         files: ['build/js/*.js'],
-        tasks: ['uglify', 'copy']
+        tasks: ['uglify']
       },
       css: {
         files: ['build/sass/*.sass'],
-        tasks: ['compass:dist', 'cmq', 'copy', 'cssmin', 'replace-t4']
+        tasks: ['compass:dist', 'cmq', 'cssmin', 't4']
       },
       images: {
         files: ['build/imgs/*'],
-        tasks: ['imagemin', 'copy:t4']
+        tasks: ['imagemin']
+      },
+      includes: {
+        files: ['build/inc/*'],
+        tasks: ['includereplace', 'sails-linker', 'validation']
       }
     },
 
@@ -36,42 +40,39 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'assets/js/global.js' : ['build/js/*.js', '!build/js/jquery.js', '!build/js/modernizr.js']
+          'assets/js/global.js' : ['build/js/*.js']
         }
       }
     },
     copy: {
-      js: {
-        expand: true,
-        cwd: 'build/js/',
-        src: ['jquery.js', 'modernizr.js'],
-        dest: 'assets/js/',
-        flatten: true,
-        filter: 'isFile',
+      bower: {
+        cwd: 'bower_components',
+        src: '*/**',
+        dest: 'assets/lib',
+        expand: true
       },
       t4: {
         cwd: 'assets/',
         src: '*/**',
         dest: 't4/',
         expand: true
-      },
-      bower: {
-        cwd: 'bower_components',
-        src: '*/**',
-        dest: 'assets/lib',
-        expand: true
       }
     },
     replace: {
-      t4: {
-        src: ['t4/css/global.css'],
+      t4css: {
+        src: ['t4/css/*.css'],
         overwrite: true,
         replacements: []
-      }
+      },
+      t4html: {
+        src: ['t4/views/*.html'],
+        overwrite: true,
+        replacements: []
+      },
     },
     validation: {
       files: {
-        src: ['*.html']
+        src: ['assets/views/*.html']
       }
     },
     cmq: {
@@ -84,7 +85,7 @@ module.exports = function(grunt) {
     cssmin: {
       dist: {
         files: {
-          't4/css/global.css': ['t4/css/global.css']
+          'assets/css/global.css': ['assets/css/global.css']
         }
       }
     },
@@ -97,44 +98,33 @@ module.exports = function(grunt) {
         options: {
           startTag: '<!--MODERNIZR-->',
           endTag: '<!--MODERNIZR END-->',
-          fileTmpl: '<script src="%s"></script>',
-          appRoot: ''
+          fileTmpl: '<script src="../%s"></script>',
+          appRoot: 'assets/'
         },
         files: {
-          '*.html': ['assets/lib/modernizr/modernizr.js']
-        }
-      },
-      jquery: {
-        options: {
-          startTag: '<!--JQUERY-->',
-          endTag: '<!--JQUERY END-->',
-          fileTmpl: '<script src="%s"></script>',
-          appRoot: ''
-        },
-        files: {
-          '*.html': ['assets/lib/jquery/jquery.min.js']
+          'assets/views/*.html': ['assets/lib/modernizr/modernizr.js']
         }
       },
       js : {
         options: {
           startTag: '<!--GLOBAL:JS-->',
           endTag: '<!--GLOBAL:JS END-->',
-          fileTmpl: '<script src="%s"></script>',
-          appRoot: ''
+          fileTmpl: '<script src="../%s"></script>',
+          appRoot: 'assets/'
         },
         files: {
-          '*.html': ['assets/js/*.js']
+          'assets/views/*.html': ['assets/js/*.js']
         }
       },
       css : {
         options: {
           startTag: '<!--GLOBAL:CSS-->',
           endTag: '<!--GLOBAL:CSS END-->',
-          fileTmpl: '<link rel="stylesheet" href="%s" />',
-          appRoot: ''
+          fileTmpl: '<link rel="stylesheet" href="../%s" />',
+          appRoot: 'assets/'
         },
         files: {
-          '*.html': ['assets/css/*.css']
+          'assets/views/*.html': ['assets/css/*.css']
         }
       }
     },
@@ -151,6 +141,17 @@ module.exports = function(grunt) {
           dest: 'assets/imgs/'
         }]
       }
+    },
+    includereplace: {
+      dist: {
+        options: {
+          includesDir: 'build/inc/'
+        },
+        src: '*.html',
+        dest: 'assets/views/',
+        cwd: 'build/views/',
+        expand: 'true'
+      }
     }
   });
   // load plugins
@@ -159,21 +160,25 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-html-validation');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-include-replace');
   grunt.loadNpmTasks('grunt-sails-linker');
   grunt.loadNpmTasks('grunt-text-replace');
 
 grunt.registerTask('replace-t4', function() {
-  var replacements = grunt.file.readJSON('replacements.json');
-  grunt.config('replace.t4.replacements', replacements);
+  var cssReplacements = grunt.file.readJSON('replacements.json');
+  grunt.config('replace.t4css.replacements', cssReplacements);
   grunt.task.run('replace');
 });
 
 //Build the initial directories
-grunt.registerTask('build', ['bower', 'compass:dist', 'cmq', 'uglify', 'imagemin', 'copy', 'cssmin', 'replace-t4', 'sails-linker']);
+grunt.registerTask('build', ['bower', 'compass:dist', 'cmq', 'uglify', 'imagemin', 'copy:bower', 'cssmin', 'includereplace', 'sails-linker', 't4', 'watch']);
+
+//Builds T4 directory
+grunt.registerTask('t4', ['copy:t4', 'replace-t4']);
 
 // Default task.
 grunt.registerTask('default', ['watch']);
