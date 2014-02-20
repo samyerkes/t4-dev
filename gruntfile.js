@@ -10,11 +10,11 @@ module.exports = function(grunt) {
       },
       html: {
         files: 'build/views/*.html',
-        tasks: ['includereplace', 'sails-linker', 'validation']
+        tasks: ['includereplace', 'sails-linker', 'validation', 't4']
       },
       js: {
         files: ['build/js/*.js'],
-        tasks: ['uglify']
+        tasks: ['uglify', 't4']
       },
       css: {
         files: ['build/sass/*.sass'],
@@ -22,11 +22,11 @@ module.exports = function(grunt) {
       },
       images: {
         files: ['build/imgs/*'],
-        tasks: ['imagemin']
+        tasks: ['imagemin', 't4']
       },
       includes: {
         files: ['build/inc/*'],
-        tasks: ['includereplace', 'sails-linker', 'validation']
+        tasks: ['includereplace', 'sails-linker', 'validation', 't4']
       }
     },
 
@@ -175,7 +175,7 @@ grunt.registerTask('replace-t4', function() {
 });
 
 //Build the initial directories
-grunt.registerTask('build', ['bower', 'compass:dist', 'cmq', 'uglify', 'imagemin', 'copy:bower', 'cssmin', 'includereplace', 'sails-linker', 't4', 'watch']);
+grunt.registerTask('build', ['bower', 'compass', 'cmq', 'uglify', 'imagemin', 'copy:bower', 'cssmin', 'includereplace', 'sails-linker', 't4', 'watch']);
 
 //Builds T4 directory
 grunt.registerTask('t4', ['copy:t4', 'replace-t4']);
