@@ -1,25 +1,26 @@
 {
-  "name": "grunt-test",
-  "version": "0.0.0",
+  "name": "T4Dev",
+  "version": "0.1.0",
   "description": "A sample project to help VCU web developers get started with effectively for TerminalFour",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Sam Yerkes",
   "license": "BSD-2-Clause",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-compass": "~0.6.0",
-    "grunt-text-replace": "~0.3.10",
-    "grunt-html-validation": "~0.1.10",
-    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-bower-task": "~0.3.4",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-combine-media-queries": "~1.0.9",
-    "grunt-bower-task": "~0.3.4",
-    "grunt-sails-linker": "~0.9.5",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-compass": "~0.6.0",
     "grunt-contrib-cssmin": "~0.7.0",
-    "grunt-contrib-imagemin": "~0.5.0"
+    "grunt-contrib-imagemin": "~0.5.0",
+    "grunt-html-validation": "~0.1.10",
+    "grunt-include-replace": "~1.2.0",
+    "grunt-sails-linker": "~0.9.5",
+    "grunt-text-replace": "~0.3.10"
   }
 }
