@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	@@include('header.html')
+</head>
+<body>
+	@@include('vcuIdentityHeader.html')
+
+	<div class="wrap">
+		<h1>T4 Dev Setup with Grunt.js</h1>
+		<p>This is a sample project I've set up for helping VCU web developers get started with effectively developing for <a href="http://www.terminalfour.com/">TerminalFour</a>, VCU's official content management system. I say <strong>effectively</strong> because the gruntfile.js that I've set up will do a number of things to make building T4 page templates easier and efficient.</p>
+		<ul>
+			<li>Validates all HTML according to the W3C</li>
+			<li>Concatenates and minifies all CSS and Javascript</li>
+			<li>Replaces all local image paths in any CSS with T4 tags</li>
+			<li>Automatically reloads the browser on any changes in HTML, <a href="http://sass-lang.com/">SASS</a>, or JS</li>
+			<li>Preprocesses all CSS with SASS + <a href="http://compass-style.org/">Compass</a></li>
+			<li>Autoprefixes any CSS3 properties for fallback support with Compass</li>
+			<li>Loads in newest version of jQuery and Modernizr via a Bower file</li>
+			<li>Combines all media queries and adds them to the bottom of CSS</li>
+			<li>Optimizes all images for web</li>
+		</ul>
+		<p>Before you get started digging into the <a href="gruntfile.js">gruntfile.js</a> make sure you are familiar with using <a href="http://gruntjs.com/">Grunt.js</a> and SASS.</p>
+		<p>To get started:</p>
+		<ul>
+			<li>To download package dependencies, run: <pre><code>npm install</code></pre> </li>
+			<li>To build out directory system, run: <pre><code>grunt build</code></pre></li>
+			<li>To start the default watch task, run: <pre><code>grunt</code></pre></li>
+		</ul>
+		<p>If you would like contribute to the project feel free to make a pull request through <a href="https://github.com/samyerkes/t4-dev">Github</a>.</p>
+		<p>For questions feel free to contact <a href="mailto:syerkes@vcu.edu">syerkes@vcu.edu</a>.
+		<h2>Go RAMS!</h2>
+	</div>
+
+	@@include('vcuIdentityFooter.html')
+
+	@@include('footer.html')
+</body>
+</html>
