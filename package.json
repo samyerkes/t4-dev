@@ -9,18 +9,18 @@
   "author": "Sam Yerkes",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-bower-task": "~0.3.4",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-combine-media-queries": "~1.0.9",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-compass": "~0.6.0",
-    "grunt-contrib-cssmin": "~0.7.0",
-    "grunt-contrib-imagemin": "~0.5.0",
-    "grunt-html-validation": "~0.1.10",
-    "grunt-include-replace": "~1.2.0",
-    "grunt-sails-linker": "~0.9.5",
-    "grunt-text-replace": "~0.3.10"
+    "grunt": "latest",
+    "grunt-bower-task": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-combine-media-queries": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-compass": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-html-validation": "latest",
+    "grunt-include-replace": "latest",
+    "grunt-sails-linker": "latest",
+    "grunt-text-replace": "latest"
   }
 }
