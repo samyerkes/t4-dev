@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['build/sass/*.sass'],
-        tasks: ['compass', 't4', 'cmq', 'cssmin']
+        tasks: ['compass', 'autoprefixer', 't4', 'cmq', 'cssmin']
       },
       images: {
         files: ['build/imgs/*'],
@@ -152,6 +152,14 @@ module.exports = function(grunt) {
         cwd: 'build/views/',
         expand: 'true'
       }
+    },
+    autoprefixer: {
+      files: {
+        expand: true,
+        flatten: true,
+        src: 'assets/css/*.css',
+        dest: 'assets/css/'
+      }
     }
   });
   // load plugins
@@ -167,6 +175,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-include-replace');
   grunt.loadNpmTasks('grunt-sails-linker');
   grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
 grunt.registerTask('replace-t4', function() {
   var cssReplacements = grunt.file.readJSON('replacements.json');
